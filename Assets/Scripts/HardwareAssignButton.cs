@@ -13,7 +13,16 @@ public class HardwareAssignButton : MonoBehaviour
     private void Start()
     {
         buttonComponent = GetComponent<Button>();
-        buttonComponent.onClick.AddListener(hardwareController.SetActivePickPin);
+        buttonComponent.onClick.AddListener(() => { 
+            hardwareController.SetActivePickPin(); 
+            MainMenu.instance.SetMenuLayout(MenuLayout.HardwareFocus);
+            MainMenu.OnBackFromHardwareFocus += hardwareController.SetActiveMainLayout;
+        });
+    }
+
+    private void OnDisable()
+    {
+        MainMenu.OnBackFromHardwareFocus -= hardwareController.SetActiveMainLayout;
     }
 
 

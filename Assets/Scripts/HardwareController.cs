@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HardwareController : MonoBehaviour
 {
-    private Transform originalPosition;
+    private Vector3 originalPosition;
 
     [SerializeField] private GameObject mainLayout;
     public Button removeButton;
@@ -15,10 +15,11 @@ public class HardwareController : MonoBehaviour
     [SerializeField] private Transform layoutPinPickerPosition;
 
     [SerializeField] private List<PinSocket> pinSockets;
+    private List<PinSocket> assignedPinSockets;
 
     private void Start()
     {
-        originalPosition = transform;
+        originalPosition = transform.position;
     }
 
     public void SetActivePickPin()
@@ -26,6 +27,15 @@ public class HardwareController : MonoBehaviour
         pickPinSocketLayout.SetActive(true);
         mainLayout.SetActive(false);
         transform.position = layoutPinPickerPosition.position;
-       /* Camera.main.GetComponent<CameraController>().SetCameraPosition(layoutPinPickerPosition.position);*/
+        assignedPinSockets = pinSockets.FindAll(pin => pin.isAssigned);
     }
+
+    public void SetActiveMainLayout()
+    {
+        pickPinSocketLayout.SetActive(false);
+        mainLayout.SetActive(true);
+        transform.position = originalPosition;
+    }
+
+
 }

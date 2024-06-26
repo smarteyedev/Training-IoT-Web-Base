@@ -11,6 +11,11 @@ public class CableController : MonoBehaviour
     [SerializeField] private Button leftHeadButton;
     [SerializeField] private Button rightHeadButton;
 
+    private bool isRightHeadChosen;
+
+    public List<PinSocket> pinsInRightContainer;
+    public List<PinSocket> pinsInLeftContainer;
+
     private void Start()
     {
         InitCableButtons();
@@ -29,30 +34,42 @@ public class CableController : MonoBehaviour
         if (leftHeadType == CableHeadType.Female) leftHeadButton.onClick.AddListener(() => {
             FemaleHeadType();
             AfterClickButton(leftHeadButton, rightHeadButton);
+            isRightHeadChosen = false;
         });
         else leftHeadButton.onClick.AddListener(() => { 
             MaleHeadType();
             AfterClickButton(leftHeadButton, rightHeadButton);
+            isRightHeadChosen = false;
         });
 
         if (rightHeadType == CableHeadType.Female) rightHeadButton.onClick.AddListener(() => {
             FemaleHeadType();
             AfterClickButton(rightHeadButton, leftHeadButton);
+            isRightHeadChosen = true;
         });
         else rightHeadButton.onClick.AddListener(() => {
             MaleHeadType();
             AfterClickButton(rightHeadButton, leftHeadButton);
+            isRightHeadChosen = true;
         });
+    }
+
+    public List<PinSocket> GetPinsInContainer()
+    {
+        if (isRightHeadChosen) return pinsInRightContainer;
+        else return pinsInLeftContainer;
     }
 
     private void FemaleHeadType()
     {
         CableManager.instance.CableChosen(CableHeadType.Female);
+        CableManager.instance.SetCableState(CableState.OnPicked);
     }
 
     private void MaleHeadType()
     {
         CableManager.instance.CableChosen(CableHeadType.Male);
+        CableManager.instance.SetCableState(CableState.OnPicked);
     }
 
     private void AfterClickButton(Button deactivateButton, Button activateButton)

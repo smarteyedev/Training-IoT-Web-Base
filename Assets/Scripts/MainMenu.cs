@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour, IMainMenu
 
     [SerializeField] private GameObject componentPickerLayout;
     [SerializeField] private GameObject componentAssignLayout;
+    [SerializeField] private GameObject hardwareFocusLayout;
+    [SerializeField] private Button backButton;
+
+    public static event Action OnBackFromHardwareFocus;
+
+    private MenuLayout previousLayout;
 
     [Serializable]
     public struct ComponentAssignButton
@@ -37,6 +43,24 @@ public class MainMenu : MonoBehaviour, IMainMenu
     {
         componentPickerLayout.SetActive(layout == MenuLayout.ComponentPicker);
         ActivateComponentAssign(layout == MenuLayout.ComponentAssign);
+        ActivateHardwareFocusLayout(layout == MenuLayout.HardwareFocus);
+
+        if (layout != MenuLayout.HardwareFocus)
+        {
+            previousLayout = layout;
+        }
+    }
+
+    private void ActivateHardwareFocusLayout(bool isActive)
+    {
+        hardwareFocusLayout.SetActive(isActive);
+        if (isActive)
+        {
+            backButton.onClick.AddListener(() => { 
+                SetMenuLayout(previousLayout);
+                OnBackFromHardwareFocus?.Invoke();
+            });
+        }
     }
 
     private void ActivateComponentAssign(bool isActive)
@@ -102,5 +126,6 @@ public interface IMainMenu
 public enum MenuLayout
 {
     ComponentPicker,
-    ComponentAssign
+    ComponentAssign,
+    HardwareFocus
 }
