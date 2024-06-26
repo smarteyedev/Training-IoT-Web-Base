@@ -18,6 +18,7 @@ public class PinSocket : MonoBehaviour
     private Button buttonComponent;
     public bool isAssigned;
     public CableController assignedCable;
+    public SocketChecker socketChecker;
 
     private void OnEnable()
     {

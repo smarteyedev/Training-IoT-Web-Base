@@ -11,7 +11,7 @@ public class CableController : MonoBehaviour
     [SerializeField] private Button leftHeadButton;
     [SerializeField] private Button rightHeadButton;
 
-    private bool isRightHeadChosen;
+    public bool isRightHeadChosen;
 
     public List<PinSocket> pinsInRightContainer;
     public List<PinSocket> pinsInLeftContainer;
