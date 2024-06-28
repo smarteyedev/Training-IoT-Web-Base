@@ -8,56 +8,74 @@ public class Move : MonoBehaviour
     public struct NamedPosition
     {
         public string name;
-        public Transform position;
+        public List<Transform> positions; // Ubah menjadi daftar posisi
     }
 
     public List<NamedPosition> namedPositions = new List<NamedPosition>();
     [SerializeField] private GameObject objectToMove;
-    [SerializeField] private float transitionDuration = 1.0f; // Default duration
+    [SerializeField] private float transitionDuration = 1.0f; // Durasi default
 
-    private Dictionary<string, Transform> positionDictionary;
+    private Dictionary<string, List<Transform>> positionDictionary;
+    private bool isCooldown = false; // Flag cooldown
 
     void Start()
     {
-        // Initialize the dictionary
-        positionDictionary = new Dictionary<string, Transform>();
+        // Inisialisasi kamus
+        positionDictionary = new Dictionary<string, List<Transform>>();
         foreach (var namedPosition in namedPositions)
         {
-            positionDictionary[namedPosition.name] = namedPosition.position;
+            positionDictionary[namedPosition.name] = namedPosition.positions;
         }
     }
 
     public void OnPosChange(string positionName)
     {
+        if (isCooldown)
+        {
+            Debug.LogWarning("Button is in cooldown");
+            return;
+        }
+
         if (!positionDictionary.ContainsKey(positionName))
         {
             Debug.LogWarning("Invalid position name");
             return;
         }
 
-        Transform targetPosition = positionDictionary[positionName];
-        MoveObjectSmoothly(objectToMove.transform, targetPosition, transitionDuration);
+        List<Transform> targetPositions = positionDictionary[positionName];
+        StartCoroutine(MoveObjectThroughPositions(objectToMove.transform, targetPositions, transitionDuration));
     }
 
-    private void MoveObjectSmoothly(Transform start, Transform target, float totalDuration)
+    private IEnumerator MoveObjectThroughPositions(Transform start, List<Transform> targets, float totalDuration)
     {
-        objectToMove.transform.position = start.position;
-        objectToMove.transform.rotation = start.rotation;
+        isCooldown = true; // Mulai cooldown
 
-        float moveDuration = totalDuration * 0.8f; // 80% of the total duration for movement
-        float rotateDuration = totalDuration * 0.2f; // 20% of the total duration for rotation
+        float moveDuration = totalDuration * 0.8f; // 80% dari durasi total untuk gerakan
+        float rotateDuration = totalDuration * 0.2f; // 20% dari durasi total untuk rotasi
+        float individualMoveDuration = moveDuration / targets.Count; // Durasi gerakan untuk setiap posisi
 
-        // Start movement
-        LeanTween.move(objectToMove, target.position, moveDuration).setEase(LeanTweenType.easeInOutSine);
-
-        // Start rotation after movement completes
-        LeanTween.value(gameObject, 0f, 1f, moveDuration).setOnComplete(() =>
+        foreach (Transform target in targets)
         {
+            objectToMove.transform.position = start.position;
+            objectToMove.transform.rotation = start.rotation;
+
+            // Mulai gerakan
+            LeanTween.move(objectToMove, target.position, individualMoveDuration).setEase(LeanTweenType.easeInOutSine);
+
+            // Tunggu sampai gerakan selesai
+            yield return new WaitForSeconds(individualMoveDuration);
+
+            // Mulai rotasi
             LeanTween.rotate(objectToMove, target.rotation.eulerAngles, rotateDuration).setEase(LeanTweenType.easeInOutSine);
-        });
+
+            // Tunggu sampai rotasi selesai
+            yield return new WaitForSeconds(rotateDuration);
+        }
+
+        isCooldown = false; // Akhiri cooldown
     }
 
-    // Public getter for transition duration
+    // Getter publik untuk durasi transisi
     public float TransitionDuration
     {
         get { return transitionDuration; }
