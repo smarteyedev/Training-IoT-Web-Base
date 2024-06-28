@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6663211177991209942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.341
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.329
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999538
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00951079
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0007553423
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0011472945
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.131
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0091
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70717424
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7070143
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0041975263
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0042225705
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.318
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -88.911
+      objectReference: {fileID: 0}
+    - target: {fileID: -3529711782310886629, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -88.913
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: jumper hijau m-m V2 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4270109033165028740, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9223156518734960516}
+  m_SourcePrefab: {fileID: 100100000, guid: 0d6785902d0748d4fbdd4f5513968c2d, type: 3}
+--- !u!1 &7438260801001553490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4270109033165028740, guid: 0d6785902d0748d4fbdd4f5513968c2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6663211177991209942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9223156518734960516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7438260801001553490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4118e697de95276419e9371eb4d33eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  namedPositions:
+  - name: Pin1
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin2
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin3
+    positions: []
+  - name: Pin4
+    positions: []
+  - name: Pin5
+    positions: []
+  - name: Pin6
+    positions: []
+  - name: Pin7
+    positions: []
+  - name: Pin8
+    positions: []
+  - name: Pin9
+    positions: []
+  - name: Pin10
+    positions: []
+  - name: Pin11
+    positions: []
+  - name: Pin12
+    positions: []
+  - name: Pin13
+    positions: []
+  - name: Pin14
+    positions: []
+  - name: Pin15
+    positions: []
+  - name: Pin16
+    positions: []
+  - name: Pin17
+    positions: []
+  - name: Pin18
+    positions: []
+  - name: Pin19
+    positions: []
+  - name: Pin20
+    positions: []
+  - name: Pin21
+    positions: []
+  - name: Pin22
+    positions: []
+  - name: Pin23
+    positions: []
+  - name: Pin24
+    positions: []
+  - name: Pin25
+    positions: []
+  - name: Pin26
+    positions: []
+  - name: Pin27
+    positions: []
+  - name: Pin28
+    positions: []
+  - name: Pin29
+    positions: []
+  - name: Pin30
+    positions: []
+  - name: Balik
+    positions: []
+  - name: Pin1LCD
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin2LCD
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin3LCD
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin4LCD
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin1DHT
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin2DHT
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Pin3DHT
+    positions:
+    - {fileID: 0}
+    - {fileID: 0}
+  objectToMove: {fileID: 7438260801001553490}
+  transitionDuration: 3
