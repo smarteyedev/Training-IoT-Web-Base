@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// Attach this script to a cable picker button (See in component picker layout in main menu)
+/// </summary>
 public class CablePickerButton : MonoBehaviour
 {
     [SerializeField] private string cableName;
